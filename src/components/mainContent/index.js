@@ -8,31 +8,29 @@ import {
   Text,
   Stack,
   Box,
-  StackDivider,
   HStack,
-  Icon,
   Select,
   Input,
 } from "@chakra-ui/react";
 import Chart from "../chart";
 import PlaceHolder from "../../images/placeholder.png";
-const Feature = ({ text, icon, iconBg }) => {
-  return (
-    <Stack direction={"row"} align={"center"}>
-      <Flex
-        w={8}
-        h={8}
-        align={"center"}
-        justify={"center"}
-        rounded={"full"}
-        bg={iconBg}
-      >
-        {icon}
-      </Flex>
-      <Text fontWeight={600}>{text}</Text>
-    </Stack>
-  );
-};
+// const Feature = ({ text, icon, iconBg }) => {
+//   return (
+//     <Stack direction={"row"} align={"center"}>
+//       <Flex
+//         w={8}
+//         h={8}
+//         align={"center"}
+//         justify={"center"}
+//         rounded={"full"}
+//         bg={iconBg}
+//       >
+//         {icon}
+//       </Flex>
+//       <Text fontWeight={600}>{text}</Text>
+//     </Stack>
+//   );
+// };
 
 const MainContent = () => {
   return (
