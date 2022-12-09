@@ -2,7 +2,7 @@ import * as React from "react";
 import Layout from "../components/Layout";
 import Sidebar from "../components/sideBar";
 import MainContent from "../components/mainContent";
-import { Flex, Stack } from "@chakra-ui/react";
+import {Stack } from "@chakra-ui/react";
 
 const IndexPage = () => {
   return (
