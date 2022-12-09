@@ -19,10 +19,16 @@ import { BsCircleFill } from "react-icons/bs";
 function Sidebar({ children }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
-    <Box minH="100vh" bg={useColorModeValue("gray.100", "gray.900")}>
+    <Box
+      minH={{ sm: "auto", md: "100vh" }}
+      w={{ base: "100%", md: "20%" }}
+      position="relative"
+      bg={{ base: "#eee", md: "#002840" }}
+    >
       <SidebarContent
         onClose={() => onClose}
         display={{ base: "none", md: "block" }}
+        color="white"
       />
       <Drawer
         autoFocus={false}
@@ -37,7 +43,6 @@ function Sidebar({ children }) {
           <SidebarContent onClose={onClose} />
         </DrawerContent>
       </Drawer>
-      {/* mobilenav */}
       <MobileNav display={{ base: "flex", md: "none" }} onOpen={onOpen} />
       <Box ml={{ base: 0, md: 60 }} p="4">
         {children}
@@ -48,18 +53,14 @@ function Sidebar({ children }) {
 
 const SidebarContent = ({ onClose, ...rest }) => {
   return (
-    <Box
-      mx="3"
-      p={5}
-      bg={useColorModeValue("white", "gray.900")}
-      borderRight="1px"
-      borderRightColor={useColorModeValue("gray.200", "gray.700")}
-      w={{ base: "full", md: 60 }}
-      pos="fixed"
-      h="full"
-      {...rest}
-    >
-      <Text textAlign="left" mb={3} fontSize="2xl" fontFamily="monospace" fontWeight="bold">
+    <Box p={5} h="full" position="fixed" top="10px" {...rest}>
+      <Text
+        textAlign="left"
+        mb={3}
+        fontSize="2xl"
+        fontFamily="monospace"
+        fontWeight="bold"
+      >
         Live Trading
       </Text>
       <CloseButton display={{ base: "flex", md: "none" }} onClick={onClose} />
@@ -81,7 +82,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
           Bybit #1
         </ListItem>
         <ListItem>
-          <ListIcon as={BsCircleFill} color="blackAlpha.400" />
+          <ListIcon as={BsCircleFill} color="grey" />
           Bybit #1
         </ListItem>
         <ListItem>
@@ -89,52 +90,15 @@ const SidebarContent = ({ onClose, ...rest }) => {
           Bybit #1
         </ListItem>
       </List>
-      {/* {LinkItems.map((link) => (
-        <NavItem key={link.name} icon={link.icon}>
-          {link.name}
-        </NavItem>
-      ))} */}
     </Box>
   );
 };
-
-// const NavItem = ({ icon, children, ...rest }) => {
-//   return (
-//     <Link
-//       href="#"
-//       style={{ textDecoration: "none" }}
-//       _focus={{ boxShadow: "none" }}
-//     >
-//       <Flex
-//         align="center"
-//         p="1"
-//         mx="1"
-//         borderRadius="lg"
-//         role="group"
-//         cursor="pointer"
-//         {...rest}
-//       >
-//         {icon && (
-//           <Icon
-//             mr="4"
-//             fontSize="16"
-//             _groupHover={{
-//               color: "white",
-//             }}
-//             as={icon}
-//           />
-//         )}
-//         {children}
-//       </Flex>
-//     </Link>
-//   );
-// };
 
 const MobileNav = ({ onOpen, ...rest }) => {
   return (
     <Flex
       ml={{ base: 0, md: 60 }}
-      px={{ base: 4, md: 24 }}
+      px={{ base: 0, md: 24 }}
       height="20"
       alignItems="center"
       bg={useColorModeValue("white", "gray.900")}
@@ -150,9 +114,9 @@ const MobileNav = ({ onOpen, ...rest }) => {
         icon={<FiMenu />}
       />
 
-      <Text fontSize="2xl" ml="8" fontFamily="monospace" fontWeight="bold">
+      {/* <Text fontSize="2xl" ml="8" fontFamily="monospace" fontWeight="bold">
         Logo
-      </Text>
+      </Text> */}
     </Flex>
   );
 };

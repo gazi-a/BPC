@@ -2,15 +2,15 @@ import * as React from "react";
 import Layout from "../components/Layout";
 import Sidebar from "../components/sideBar";
 import MainContent from "../components/mainContent";
-import { Flex } from "@chakra-ui/react";
+import { Flex, Stack } from "@chakra-ui/react";
 
 const IndexPage = () => {
   return (
     <Layout>
-      <Flex>
+      <Stack direction={{ base: "column", md: "row" }}>
         <Sidebar />
         <MainContent />
-      </Flex>
+      </Stack>
     </Layout>
   );
 };
