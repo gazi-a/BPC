@@ -4,7 +4,6 @@ import {
   Container,
   SimpleGrid,
   Image,
-  Flex,
   Text,
   Stack,
   Box,
