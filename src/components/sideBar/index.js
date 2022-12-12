@@ -20,14 +20,14 @@ function Sidebar({ children }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <Box
-      minH={{ sm: "auto", md: "100vh" }}
-      w={{ base: "100%", md: "20%" }}
+      minH={{ base: "auto", lg: "100vh" }}
+      w={{ base: "100%", lg: "15%" }}
       position="relative"
-      bg={{ base: "#eee", md: "#002840" }}
+      bg={{ base: "#eee", lg: "#002840" }}
     >
       <SidebarContent
         onClose={() => onClose}
-        display={{ base: "none", md: "block" }}
+        display={{ base: "none", lg: "block" }}
         color="white"
       />
       <Drawer
@@ -43,8 +43,8 @@ function Sidebar({ children }) {
           <SidebarContent onClose={onClose} />
         </DrawerContent>
       </Drawer>
-      <MobileNav display={{ base: "flex", md: "none" }} onOpen={onOpen} />
-      <Box ml={{ base: 0, md: 60 }} p="4">
+      <MobileNav display={{ base: "flex", lg: "none" }} onOpen={onOpen} />
+      <Box ml={{ base: 0, lg: 60 }} p="4">
         {children}
       </Box>
     </Box>
@@ -63,7 +63,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
       >
         Live Trading
       </Text>
-      <CloseButton display={{ base: "flex", md: "none" }} onClick={onClose} />
+      <CloseButton display={{ base: "flex", lg: "none" }} onClick={onClose} />
       <List spacing={1} textAlign="left">
         <ListItem>
           <ListIcon as={BsCircleFill} color="green.500" />
@@ -97,8 +97,8 @@ const SidebarContent = ({ onClose, ...rest }) => {
 const MobileNav = ({ onOpen, ...rest }) => {
   return (
     <Flex
-      ml={{ base: 0, md: 60 }}
-      px={{ base: 0, md: 24 }}
+      ml={{ base: 0, lg: 60 }}
+      px={{ base: 0, lg: 24 }}
       height="20"
       alignItems="center"
       bg={useColorModeValue("white", "gray.900")}

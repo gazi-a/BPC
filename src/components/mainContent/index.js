@@ -15,7 +15,7 @@ import PlaceHolder from "../../images/placeholder.png";
 
 const MainContent = () => {
   return (
-    <Box textAlign="left" w={{ sm: "100%", md: "80%" }}>
+    <Stack textAlign="left" w={{ base: "100%", lg: "85%" }}>
       <Box bg="#eee" p={10}>
         <Text
           as="h2"
@@ -87,13 +87,23 @@ const MainContent = () => {
               <Text color={"gray.500"} fontSize={"lg"} w={"50%"}>
                 From
               </Text>
-              <Input type="date" placeholder="phone number" w={"50%"} bg="white"/>
+              <Input
+                type="date"
+                placeholder="phone number"
+                w={"50%"}
+                bg="white"
+              />
             </HStack>
             <HStack>
               <Text color={"gray.500"} fontSize={"lg"} w={"50%"}>
                 To
               </Text>
-              <Input type="date" placeholder="phone number" w={"50%"} bg="white"/>
+              <Input
+                type="date"
+                placeholder="phone number"
+                w={"50%"}
+                bg="white"
+              />
             </HStack>
           </Stack>
         </SimpleGrid>
@@ -232,7 +242,7 @@ const MainContent = () => {
         </SimpleGrid>
         <Chart />
       </Box>
-    </Box>
+    </Stack>
   );
 };
 export default MainContent;
